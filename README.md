@@ -53,3 +53,37 @@ eg. *view(clicks_num)* will display a column with the various campaign ID's and 
 
 The code for this process is broken up into three line sections for each of the tibbles of impressions, clicks and conversions. These lines can be ran individually or altogether as a single section.
 It is also recommended to again use the *view()* function to ensure your columns have been renamed.
+
+**Step 5: Merging Tables**
+
+The following step in the project is arguably the most important in ensuring our data is prepped before the analysis. Here we begin to merge the five tibbles as one, so as when analysing, we can compare the variables from the one tibble, advert_camp1.
+
+1st Join - *inner_join()* function used to merge our advertiser and campaign tables when their keys match (essentailly a foreign key); in this scenario it being                          advertiser_id. Thus the output will be the key and the varaibles from the advertiser and campaign tables. Columns are renamed so as to to distinctly differntiate 
+           between the different ID's.
+           This function will not include any unmatched observations. In this instance, the advertiser 'Bobo' was not included as they did not have a matching campaign, or 
+           any campaign for that matter. Thus they will be excluded from analysis.
+           
+2nd Join - *left_join()* function used to add the clicks_num table to the newly created tibble from the 1st join. They are joined on the matching key of campaign_id.  
+           A left join allows all observations from the first tibble to kept, in this instance, the newly created tibble.
+
+3rd Join - *left_join()* function used to add impressions_num table to the new advert_camp1 tibble. Again they are joined on the campaign_id.
+
+4th Join - *left_join()* function used to add conversion_num table to the advert_camp1 tibble. Matched again on the campaign_id.
+
+It is recommended that you run each of the joins individually and view the advert_camp1 table after each join. This confirms that the tables have merged as you have perceived and familiarise you with the new variable names etc.
+
+**Step 6: Tidying the new tibble**
+
+When the table is viewed, it can be seen that there are NA values present. This is often the case when joining various different tibbles together. For the purpose of this analysis, we want to change any NA value to 0 so as we can analyse the dataframe effectively.
+
+To do this, we re-use our *is.na()* function, put it in square brackets and let it equal to zero. i.e. *advert_camp1[is.na(advert_camp1)] = 0* 
+The square bracket allows us to change all NA values in the vector to zero.
+
+After dealing with NA values we now check to see if our ID's are unique values. Doing this, we again use our *count* function, call on the tibble we're refferring, and then call on the variable we wish to count. A *filter()* function is then used to find if the advertisement_id count is greater than one.
+
+When counting the advertisement_id, it shows that it is counted three times. However we are not concerned by this as an advertiser can have multiple campaigns.
+
+But when counting the campaign_id, it shows that all of their ID's are unique.
+
+The code for this tidying set can be ran in blocks that are indicated inbetween comments on the R file, under the Step 6 heading.
+
