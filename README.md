@@ -169,5 +169,54 @@ It should be noted that to run the code in this step and produce the appropriate
 
 **Sample Output:** The graph confirms for us that Coco Cola indeed has three different campaigns. What's even more interesting that the 'Run of network' campaign was ran by both Coco Cola and Ninetendo. Further into the analysis it will become apparent which of the campaigns performed better. This graph will be useful with larger datasets and will allow you to select various campaigns to create comparisons.
 
+- The next comparison we will make is looking at the campaigns and their budgets.
 
- 
+
+![camp_budg_freq](https://user-images.githubusercontent.com/68699458/103670826-03969b80-4f72-11eb-8ae3-8963da7181c7.png)
+
+**Sample Output:** The chart shows that 'Q4 Performance' had the biggest budget, and the rest of the campaign budgets were 20,000. We know from previous analysis that there are more than one of some of the campaigns in the dataset, so to get a clearer look at the lower end of the axis, we will use the xlim() function which allows us to limit the x-axis (in this case, the budget) to a certain amount.
+
+
+![camp_budg_xlim](https://user-images.githubusercontent.com/68699458/103671254-90d9f000-4f72-11eb-84ef-6864ee955b7b.png)
+
+**Sample Output:** We can now see the two different 'Run of Network' campaigns, with one of the budgets being >10,000 and the other 2,500<. It will become aparent later which is which. It should also be noted that the 'Test campaign' seems to have a budget of 0. 
+
+- We will now begin to compare the variables that arguably deem whether a campaign is successful or not. Firstly, a scatter graph comparing the impressions to the number of clicks. 
+
+
+![click_vs_imp](https://user-images.githubusercontent.com/68699458/103672909-dac3d580-4f74-11eb-9831-2a3b573a57ed.png)
+
+**Sample Output:** As we can see, the graph shows a positive relationship between impressions and clicks, i.e. as the number of impressions increase, the number of clicks do the same. It can also be seen after the 'Q4 Performance Trend', this then slightly decreases. To see which company had the greatest amount of impressions and clicks, we can just change the legend/colour to company_name.
+
+
+![click__imp_camp](https://user-images.githubusercontent.com/68699458/103673699-cfbd7500-4f75-11eb-93d2-bc4a4a2525cd.png)
+
+**Sample Output:** This variation on the previous graphs shows that the campaign with the most number of clicks belongs to Lever Brows. It can also be noted that it is Ninetendo's 'Run of Network' campaign that is performing the best as opposed to Coca Cola's. It also shows that despite Coco Cola having more campaigns, this did not correlate with more clicks. 
+
+- The following graph is shows a smoothed line, and confirms the positive trend and tail off after 10 impressions. 
+
+
+![smooth](https://user-images.githubusercontent.com/68699458/103674273-77d33e00-4f76-11eb-9520-486d0934c700.png)
+
+- Impressions vs Conversions
+
+
+![imp_conv](https://user-images.githubusercontent.com/68699458/103674524-c41e7e00-4f76-11eb-82ef-dd61cfb02de0.png)
+![imp_smooth](https://user-images.githubusercontent.com/68699458/103674525-c4b71480-4f76-11eb-8746-6979f27b0dcd.png)
+
+**Sample Output:** Similarly to the previous chart, there is a strong positive trend, with more impressions leading to more conversions.'Run of Network' and 'Q4 Perfromance' had the most conversions with 3 and 'Christmas Cheer' behind with 2. To find out which company the 'Run of network' with the most conversions belongs to, we again will simply change the colour to display the company_name. 
+
+
+![imp_vs_conv_comp](https://user-images.githubusercontent.com/68699458/103676522-1791cb80-4f79-11eb-9231-6bf45e02d473.png)
+
+**Sample Output:** It can be confirmed that it was the Ninetendo 'Run of Network' campaign with the most impressions and clicks.
+
+- Clicks vs Conversions
+
+
+![click_conv_scatter](https://user-images.githubusercontent.com/68699458/103676883-8a02ab80-4f79-11eb-97e9-5ae2dfecbb05.png)
+
+![click_conv_smooth](https://user-images.githubusercontent.com/68699458/103677078-c0d8c180-4f79-11eb-9ed1-c5d9d6670a77.png)
+
+
+**Sample Output:** We again see that there is a strong positive correlation with a greater number of clicks equating to a greater number of conversions. When geom_smooth is used, it throws an error as the span is too small however with a larger dataset this would not be an issue. Now compare budget to conversions to see what the correlation is like, and see does a bigger budget mean more conversions. 
