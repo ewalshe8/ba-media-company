@@ -220,3 +220,12 @@ It should be noted that to run the code in this step and produce the appropriate
 
 
 **Sample Output:** We again see that there is a strong positive correlation with a greater number of clicks equating to a greater number of conversions. When geom_smooth is used, it throws an error as the span is too small however with a larger dataset this would not be an issue. Now compare budget to conversions to see what the correlation is like, and see does a bigger budget mean more conversions. 
+
+- Budget vs Conversions
+
+
+![budg_conv](https://user-images.githubusercontent.com/68699458/103677788-a5ba8180-4f7a-11eb-8857-cdedc60d2e1a.png)
+
+**Sample Output:** This scatter plot shows that just because there is a large budget does it mean that there will be larger number of conversions. It can be seen from the graph that Ninetendo had a budget less than 10% of Lever Brows' and still had the same number of conversions. This graph should show users to watch for outliers in the analysis of future datasets. 
+
+
