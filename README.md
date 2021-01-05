@@ -148,7 +148,26 @@ It should be noted that to run the code in this step and produce the appropriate
 
 - We have now explored the variables individually and will now move onto covariation to compare them and provide more context to the dataset.
 
+#### Step 8: EDA - Covariation
 
+- The first two variables we will compare is companies and their budget. Similarly to the variation analysis, the two lines of code in between comments will be run simultaneously to produce the individual graphs. Observations or questions made on the sample output should also be applied and adjusted to the actual dataset of choice. 
+
+
+![comp_budg_hist](https://user-images.githubusercontent.com/68699458/103668022-8f0e2d80-4f6e-11eb-8cc2-82ebf2e5081e.png)
+
+**Sample Output:** The first thing that is noticable from the graph is that none of the budgets occur more than once. It can also be seen Coco Cola have three different budgets and Lever Brows and Ninetendo each have one. In a larger data set you would see a lot more budgets of the same value (bigger count on y-axis) as well as many more companies. It would be recommended that if you are looking for more specific results to restrict the output by the company name.
+
+
+![comp_budg_freq](https://user-images.githubusercontent.com/68699458/103668654-3c814100-4f6f-11eb-9a58-be944abad0ce.png)
+
+**Sample Output:** This is an alternative way of displaying the data. It should be noted again that the binwidths are quite large due to the nature of the small dataset and this figure should be adjusted appropriately.
+
+- From our variation analysis, we remember that there were two 'Run of network' campaigns. To answer our question made (who ran these campaigns?), we will compare the company with their campaigns on a bar chart. 
+
+
+![comp_camp_bar](https://user-images.githubusercontent.com/68699458/103669083-cd581c80-4f6f-11eb-86e0-aa1eac869f35.png)
+
+**Sample Output:** The graph confirms for us that Coco Cola indeed has three different campaigns. What's even more interesting that the 'Run of network' campaign was ran by both Coco Cola and Ninetendo. Further into the analysis it will become apparent which of the campaigns performed better. This graph will be useful with larger datasets and will allow you to select various campaigns to create comparisons.
 
 
  
