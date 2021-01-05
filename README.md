@@ -127,5 +127,7 @@ It should be noted that to run the code in this step and produce the appropriate
 
 **Sample Output:** This graph also visualises the clicks occurrences well. It is difficult with it being such a small dataset to confirm any trends, but with larger datasets, positive and negative trends should be kept an eye on.
 
+- The same process will be repeated for the impressions variable as the previous two variables, with both a histogram and a freqpoly graph being created so as to see which displays the data with more clarity.
+
 
  
