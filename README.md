@@ -8,7 +8,7 @@ this project. Output from the sample data set will also be provided as well as a
 
 The programming language used for this project was R, and its functions and features will be referred to and explained.
 
-**Step 1: Loading in Libraries and CSV Files**
+## Step 1: Loading in Libraries and CSV Files
 
 The first step in the project is to load in the libraries/packages that are going to be used throughout the project using the *library()* function. The three libraries 
 that were loaded in individually were *tidyverse, tibble,* and *dplyr*. These will help analysing data and merging dataframes together. 
@@ -23,7 +23,7 @@ For example *advertiser <- read_csv('advertiser.csv', col_names = TRUE)* will lo
 The *col_names = TRUE* just lets R Studio know that it should account that there will be headers in the columns of the file. This should be checked before the file is loaded. 
 I would recommend running each line of code when loading the files individually so as to ensure they are stored in R Studio properly.
 
-**Step 2: Viewing the files/tibbles**
+## Step 2: Viewing the files/tibbles
 
 This procedure is to simply check that the files have been loaded in as tibbles before we begin prepping the data for analysis.
 To do this, we use the *view()* function, and when this is run, the tibble should be shown in a different window from the R file, with all column headers present as well as the relevant data.
@@ -31,14 +31,14 @@ This function is very handy further down the line when we've to check whether we
 Again, I would suggest running each view function individually and comparing the output with the open original file.
 In this instance, the files loaded in as tibbles correctly and we are ok to proceed.
 
-**Step 3: Checking for missing data**
+## Step 3: Checking for missing data
 
 The next step is checking for null/NA values in the dataset provided. This is completed using the *is.na()* function whereby a TRUE value will be returned if there is a value of NA,
 and FALSE if the opposite is the case. It is good to be aware of potential NA values when tidying data as well as analysing it, in case of errors or problems further down the line when running the code.
 
 Similarly to above, each line is ran individually so as to inspect the output with accuracy in the terminal. 
 
-**Step 4: Tidying Data and making it usable**
+## Step 4: Tidying Data and making it usable
 
 When viewing the data that was imported, we noticeed that three of the tibbles *impressions*, *clicks*, and *conversions*, displayed their data using a date, time and timezone columns.
 i.e. in the click tibble it can be seen that an advertised campaign was clicked on  X date, at Y time and in Z timezone. While this is interesting to note, it is difficult to compare and analyse this data
@@ -54,7 +54,7 @@ eg. *view(clicks_num)* will display a column with the various campaign ID's and 
 The code for this process is broken up into three line sections for each of the tibbles of impressions, clicks and conversions. These lines can be ran individually or altogether as a single section.
 It is also recommended to again use the *view()* function to ensure your columns have been renamed.
 
-**Step 5: Merging Tables**
+## Step 5: Merging Tables
 
 The following step in the project is arguably the most important in ensuring our data is prepped before the analysis. Here we begin to merge the five tibbles as one, so as when analysing, we can compare the variables from the one tibble, advert_camp1.
 
@@ -72,7 +72,7 @@ The following step in the project is arguably the most important in ensuring our
 
 It is recommended that you run each of the joins individually and view the advert_camp1 table after each join. This confirms that the tables have merged as you have perceived and familiarise you with the new variable names etc.
 
-**Step 6: Tidying the new tibble**
+## Step 6: Tidying the new tibble
 
 When the table is viewed, it can be seen that there are NA values present. This is often the case when joining various different tibbles together. For the purpose of this analysis, we want to change any NA value to 0 so as we can analyse the dataframe effectively.
 
@@ -87,11 +87,45 @@ But when counting the campaign_id, it shows that all of their ID's are unique.
 
 The code for this tidying set can be ran in blocks that are indicated inbetween comments on the R file, under the Step 6 heading.
 
-**Step 7: Analysing the Data Set - EDA - Variation Analysis
+## Step 7: Analysing the Data Set - EDA - Variation Analysis
 
 Exploratory Data Analysis is a process whereby we generate questions about our data, search for the answers using visualisations and data modelling, and use these answers to refine our questions. To start this process we will look at variation, where we will look at what occurs within each variable. 
 
-It should be noted that to run the code in this step and produce the appropriate graphs, the two lines inbetween comments should be run simulatantiously. 
+It should be noted that to run the code in this step and produce the appropriate graphs, the two lines inbetween comments should be run simulatantiously. The sample output should be analysed the same as the actual dataset in use, and the questions formulated should also be considered when the code is in use.
+
+#### Company Occurences 
+
+- The first variable we will analyse is the company_name variable. We plot the variable on a bar chart to see how many occurrences each of the companies have in the dataset. 
+
+![company_occur_bar](https://user-images.githubusercontent.com/68699458/103651673-e1911f00-4f59-11eb-862b-85f36da03b5a.png)
+
+**Sample Output:** The bar chart generated shows us that in the dataset, Coco Cola appears three times while the remaining companies appear once. From this output we should ask does this correlate with the amount of campaigns the companies had?
+
+- The next variable to look at is the campaign_name variable. It will again be on a bar chart and will tell us the amount of times each campaign occurred in the dataset.
+
+![campaign_occur_bar](https://user-images.githubusercontent.com/68699458/103652185-a5aa8980-4f5a-11eb-998d-64b474e163ce.png)
+
+**Sample Output:** The sample dataset shows that each campaign appeared once in the dataset with the exception of "Run of network" which appeared twice. This is an interesting outcome as we concluded when preparing the data that each campaign had its own unique ID. This leads us to the question, did the same company run the same campaign on two occassions? Alternatively, did two different companies run the same campaign? This will be analysed further when we move onto covariation analysis. 
+
+- We now will begin analysing the continuous distributions, beginning with budget. We will first plot the data using a histogram. 
+
+![budget_hist](https://user-images.githubusercontent.com/68699458/103652990-c9ba9a80-4f5b-11eb-9324-f50b35803b18.png)
+
+**Sample Output:** The histogram shows us that each budget amount is 1, i.e. there are no two campaigns with the same budget. The first bin in the graph looks slightly larger then the rest and thus begging the question, is there more than one there? This can happen where a histogram does not provide a clear picture and we will instead use geom_freqpoly. It should also be noted that in the code you may have to play around with smaller and larger binwidths as with a small sample dataset like this, abnormally large binwidths are used.
+
+![budget_freqpoly](https://user-images.githubusercontent.com/68699458/103653388-5cf3d000-4f5c-11eb-95b5-603e48fe862b.png)
+
+**Sample Output:** This graph also shows a wider first spike in comparison to the rest so we can thus confirm that there are more than one observation there. It also shows the huge variance in the different budgets and is worth noting for future analysis.
+
+- The next variable to explore is clicks, which will be first plotted on a histogram. 
+
+![clicks_hist](https://user-images.githubusercontent.com/68699458/103653828-fde28b00-4f5c-11eb-8c77-3b3ac79791df.png)
+
+**Sample Output:** Here we can clearly see the number of occurences for each click, with there being two observations for 0 and 4 clicks and one for 6 clicks. This graph may get difficult to read with a larger dataset due to the varying number of clicks per campaign, so we will also plot the same variable using geom_freqpoly.
+
+![clicks_hist](https://user-images.githubusercontent.com/68699458/103653828-fde28b00-4f5c-11eb-8c77-3b3ac79791df.png)
+
+**Sample Output:** This graph also visualises the clicks occurrences well. It is difficult with it being such a small dataset to confirm any trends, but with larger datasets, positive and negative trends should be kept an eye on.
 
 
-
+ 
