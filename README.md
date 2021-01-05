@@ -129,5 +129,26 @@ It should be noted that to run the code in this step and produce the appropriate
 
 - The same process will be repeated for the impressions variable as the previous two variables, with both a histogram and a freqpoly graph being created so as to see which displays the data with more clarity.
 
+![impressions_hist](https://user-images.githubusercontent.com/68699458/103665975-f4145400-4f6b-11eb-9492-7b627fa2b717.png)
+
+
+![impressions_freq](https://user-images.githubusercontent.com/68699458/103666036-01314300-4f6c-11eb-949d-8cbd8acf0a5b.png)
+
+**Samply Output:** These two graphs show the amount of occurrences of a particular number of impressions. As we can see there is only one observation per number of impressions. Currently this data is somewhat meaningless until we compare it to other variables.
+
+- Finally the last variable we individually analyse is conversions, again producing the same two graphs. 
+
+
+![conversions_hist](https://user-images.githubusercontent.com/68699458/103666470-98969600-4f6c-11eb-94ae-4d030dc47a6e.png)
+
+
+![conversions_freq](https://user-images.githubusercontent.com/68699458/103666518-a5b38500-4f6c-11eb-9684-52b19cf51c44.png)
+
+**Sample Output:** From these graphs we can see that there are two observations/occurrences at 0 and 3 number of conversions. With a larger dataset in use, the use of geom_freqpoly could show an insight into how many of the campaigns were successful in getting conversions against how many weren't.
+
+- We have now explored the variables individually and will now move onto covariation to compare them and provide more context to the dataset.
+
+
+
 
  
