@@ -87,3 +87,11 @@ But when counting the campaign_id, it shows that all of their ID's are unique.
 
 The code for this tidying set can be ran in blocks that are indicated inbetween comments on the R file, under the Step 6 heading.
 
+**Step 7: Analysing the Data Set - EDA - Variation Analysis
+
+Exploratory Data Analysis is a process whereby we generate questions about our data, search for the answers using visualisations and data modelling, and use these answers to refine our questions. To start this process we will look at variation, where we will look at what occurs within each variable. 
+
+It should be noted that to run the code in this step and produce the appropriate graphs, the two lines inbetween comments should be run simulatantiously. 
+
+
+
