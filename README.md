@@ -89,11 +89,11 @@ The code for this tidying set can be ran in blocks that are indicated inbetween 
 
 ## Step 7: Analysing the Data Set - EDA - Variation Analysis
 
-Exploratory Data Analysis is a process whereby we generate questions about our data, search for the answers using visualisations and data modelling, and use these answers to refine our questions. To start this process we will look at variation, where we will look at what occurs within each variable. 
+Exploratory Data Analysis is a process whereby we generate questions about our data, search for the answers using visualisations and data modelling, and use these answers to refine our questions. To start this process we will look at variation, where we will look at what occurs within each variable. This analysis will allow us to build an understanding of the different variables and let us decide which variables to compare in the covariation analysis.
 
 It should be noted that to run the code in this step and produce the appropriate graphs, the two lines inbetween comments should be run simulatantiously. The sample output should be analysed the same as the actual dataset in use, and the questions formulated should also be considered when the code is in use.
 
-#### Company Occurences 
+#### Company Occurrences 
 
 - The first variable we will analyse is the company_name variable. We plot the variable on a bar chart to see how many occurrences each of the companies have in the dataset. 
 
@@ -101,11 +101,15 @@ It should be noted that to run the code in this step and produce the appropriate
 
 **Sample Output:** The bar chart generated shows us that in the dataset, Coco Cola appears three times while the remaining companies appear once. From this output we should ask does this correlate with the amount of campaigns the companies had?
 
+#### Campaign Occurrences
+
 - The next variable to look at is the campaign_name variable. It will again be on a bar chart and will tell us the amount of times each campaign occurred in the dataset.
 
 ![campaign_occur_bar](https://user-images.githubusercontent.com/68699458/103652185-a5aa8980-4f5a-11eb-998d-64b474e163ce.png)
 
 **Sample Output:** The sample dataset shows that each campaign appeared once in the dataset with the exception of "Run of network" which appeared twice. This is an interesting outcome as we concluded when preparing the data that each campaign had its own unique ID. This leads us to the question, did the same company run the same campaign on two occassions? Alternatively, did two different companies run the same campaign? This will be analysed further when we move onto covariation analysis. 
+
+#### Budget
 
 - We now will begin analysing the continuous distributions, beginning with budget. We will first plot the data using a histogram. 
 
@@ -117,6 +121,8 @@ It should be noted that to run the code in this step and produce the appropriate
 
 **Sample Output:** This graph also shows a wider first spike in comparison to the rest so we can thus confirm that there are more than one observation there. It also shows the huge variance in the different budgets and is worth noting for future analysis.
 
+#### Clicks
+
 - The next variable to explore is clicks, which will be first plotted on a histogram. 
 
 ![clicks_hist](https://user-images.githubusercontent.com/68699458/103653828-fde28b00-4f5c-11eb-8c77-3b3ac79791df.png)
@@ -127,6 +133,8 @@ It should be noted that to run the code in this step and produce the appropriate
 
 **Sample Output:** This graph also visualises the clicks occurrences well. It is difficult with it being such a small dataset to confirm any trends, but with larger datasets, positive and negative trends should be kept an eye on.
 
+#### Impressions
+
 - The same process will be repeated for the impressions variable as the previous two variables, with both a histogram and a freqpoly graph being created so as to see which displays the data with more clarity.
 
 ![impressions_hist](https://user-images.githubusercontent.com/68699458/103665975-f4145400-4f6b-11eb-9492-7b627fa2b717.png)
@@ -135,6 +143,8 @@ It should be noted that to run the code in this step and produce the appropriate
 ![impressions_freq](https://user-images.githubusercontent.com/68699458/103666036-01314300-4f6c-11eb-949d-8cbd8acf0a5b.png)
 
 **Samply Output:** These two graphs show the amount of occurrences of a particular number of impressions. As we can see there is only one observation per number of impressions. Currently this data is somewhat meaningless until we compare it to other variables.
+
+#### Conversions
 
 - Finally the last variable we individually analyse is conversions, again producing the same two graphs. 
 
@@ -148,7 +158,9 @@ It should be noted that to run the code in this step and produce the appropriate
 
 - We have now explored the variables individually and will now move onto covariation to compare them and provide more context to the dataset.
 
-#### Step 8: EDA - Covariation
+## Step 8: EDA - Covariation
+
+#### Companies vs Budget
 
 - The first two variables we will compare is companies and their budget. Similarly to the variation analysis, the two lines of code in between comments will be run simultaneously to produce the individual graphs. Observations or questions made on the sample output should also be applied and adjusted to the actual dataset of choice. 
 
@@ -162,12 +174,16 @@ It should be noted that to run the code in this step and produce the appropriate
 
 **Sample Output:** This is an alternative way of displaying the data. It should be noted again that the binwidths are quite large due to the nature of the small dataset and this figure should be adjusted appropriately.
 
+#### Companies vs Campaign
+
 - From our variation analysis, we remember that there were two 'Run of network' campaigns. To answer our question made (who ran these campaigns?), we will compare the company with their campaigns on a bar chart. 
 
 
 ![comp_camp_bar](https://user-images.githubusercontent.com/68699458/103669083-cd581c80-4f6f-11eb-86e0-aa1eac869f35.png)
 
 **Sample Output:** The graph confirms for us that Coco Cola indeed has three different campaigns. What's even more interesting that the 'Run of network' campaign was ran by both Coco Cola and Ninetendo. Further into the analysis it will become apparent which of the campaigns performed better. This graph will be useful with larger datasets and will allow you to select various campaigns to create comparisons.
+
+#### Campaigns vs Budget
 
 - The next comparison we will make is looking at the campaigns and their budgets.
 
@@ -180,6 +196,8 @@ It should be noted that to run the code in this step and produce the appropriate
 ![camp_budg_xlim](https://user-images.githubusercontent.com/68699458/103671254-90d9f000-4f72-11eb-84ef-6864ee955b7b.png)
 
 **Sample Output:** We can now see the two different 'Run of Network' campaigns, with one of the budgets being >10,000 and the other 2,500<. It will become aparent later which is which. It should also be noted that the 'Test campaign' seems to have a budget of 0. 
+
+#### Impressions vs Clicks
 
 - We will now begin to compare the variables that arguably deem whether a campaign is successful or not. Firstly, a scatter graph comparing the impressions to the number of clicks. 
 
@@ -198,7 +216,7 @@ It should be noted that to run the code in this step and produce the appropriate
 
 ![smooth](https://user-images.githubusercontent.com/68699458/103674273-77d33e00-4f76-11eb-9520-486d0934c700.png)
 
-- Impressions vs Conversions
+#### Impressions vs Conversions
 
 
 ![imp_conv](https://user-images.githubusercontent.com/68699458/103674524-c41e7e00-4f76-11eb-82ef-dd61cfb02de0.png)
@@ -211,7 +229,7 @@ It should be noted that to run the code in this step and produce the appropriate
 
 **Sample Output:** It can be confirmed that it was the Ninetendo 'Run of Network' campaign with the most impressions and clicks.
 
-- Clicks vs Conversions
+#### Clicks vs Conversions
 
 
 ![click_conv_scatter](https://user-images.githubusercontent.com/68699458/103676883-8a02ab80-4f79-11eb-97e9-5ae2dfecbb05.png)
@@ -221,7 +239,7 @@ It should be noted that to run the code in this step and produce the appropriate
 
 **Sample Output:** We again see that there is a strong positive correlation with a greater number of clicks equating to a greater number of conversions. When geom_smooth is used, it throws an error as the span is too small however with a larger dataset this would not be an issue. Now compare budget to conversions to see what the correlation is like, and see does a bigger budget mean more conversions. 
 
-- Budget vs Conversions
+#### Budget vs Conversions
 
 
 ![budg_conv](https://user-images.githubusercontent.com/68699458/103677788-a5ba8180-4f7a-11eb-8857-cdedc60d2e1a.png)
