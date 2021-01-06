@@ -247,3 +247,10 @@ It should be noted that to run the code in this step and produce the appropriate
 **Sample Output:** This scatter plot shows that just because there is a large budget does it mean that there will be larger number of conversions. It can be seen from the graph that Ninetendo had a budget less than 10% of Lever Brows' and still had the same number of conversions. This graph should show users to watch for outliers in the analysis of future datasets. 
 
 
+## Conclusion
+
+- The project overall is a template as well as an automated process in analysing data for a media company.
+- It is imperative before analysis, that the data is imported, joined and transformed appropriately. 
+- Analysis begins with variation, whereby individual variables are analysed. This gives us an understanding of the dataset and gives us an idea of what variables we want to compare.
+- During covariation, we look out for how the amount of impressions affected the amount of clicks and conversions. We tie this into what campaigns had the most traction, who advertised them and how big a role if any did the budget play in their success. 
+- We also take into account that all datasets applied to this template are individual, and certain parts of the code may have to be altered to accomodate this. 
