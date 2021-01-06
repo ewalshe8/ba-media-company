@@ -91,6 +91,8 @@ The code for this tidying set can be ran in blocks that are indicated inbetween 
 
 Exploratory Data Analysis is a process whereby we generate questions about our data, search for the answers using visualisations and data modelling, and use these answers to refine our questions. To start this process we will look at variation, where we will look at what occurs within each variable. This analysis will allow us to build an understanding of the different variables and let us decide which variables to compare in the covariation analysis.
 
+To analyse our newly created tibble, we will be using ggplot. Ggplot is a data visualisation package that allows us to plot and graph our data. We do not have to worry about loading in another library as ggplot was loaded in under the Tidyverse package. To use it, we simply provide it with the dataset/tibble we are working with (data = *name_of_dataset*), select what plot we are using (geom_*name_of_graph*), and provide the variables we are working with (x = *variable_x*, y = *variable_y*). It can be seen to some of the graphs there are additional constraints such as colour and binwidth. 
+
 It should be noted that to run the code in this step and produce the appropriate graphs, the two lines inbetween comments should be run simulatantiously. The sample output should be analysed the same as the actual dataset in use, and the questions formulated should also be considered when the code is in use.
 
 #### Company Occurrences 
