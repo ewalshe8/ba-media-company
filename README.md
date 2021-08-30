@@ -42,7 +42,7 @@ Similarly to above, each line is ran individually so as to inspect the output wi
 
 When viewing the data that was imported, we noticeed that three of the tibbles *impressions*, *clicks*, and *conversions*, displayed their data using a date, time and timezone columns.
 i.e. in the click tibble it can be seen that an advertised campaign was clicked on  X date, at Y time and in Z timezone. While this is interesting to note, it is difficult to compare and analyse this data
-to other variables due to the it's nature.
+to other variables due to it's nature.
 
 To tidy these tibbles, we implement a line of code that counts the number of times the campaign ID is in the tibble (i.e. how many impressions,clicks or conversions for that unique campaign ID)
 and places this count in a new a column called 'n'. This column is then added to a new tibble along with the campaign ID's, to new tibbles depending on which of the three original tibbles you were working with.
